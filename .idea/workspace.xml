@@ -4,14 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Initial commit.">
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_driver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,8 +51,52 @@
     "settings.editor.selected.configurable": "vcs.Subversion"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.Main - (None)">
+    <configuration name="Main - Chrome" type="PythonConfigurationType" factoryName="Python">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="-b chrome" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main - Help" type="PythonConfigurationType" factoryName="Python">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--help" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main - (None)" type="PythonConfigurationType" factoryName="Python">
       <module name="Selenium_316294321" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -67,6 +118,11 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Python.Main - Chrome" />
+      <item itemvalue="Python.Main - Help" />
+      <item itemvalue="Python.Main - (None)" />
+    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -95,11 +151,56 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723468484115</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎-00002" summary="Test Commit.">
+      <option name="closed" value="true" />
+      <created>1723468760605</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723468760605</updated>
+    </task>
+    <task id="LOCAL‎-00003" summary="argument_types.py">
+      <option name="closed" value="true" />
+      <created>1723469052371</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723469052371</updated>
+    </task>
+    <task id="LOCAL‎-00004" summary="argument_parser.py">
+      <option name="closed" value="true" />
+      <created>1723469058437</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723469058437</updated>
+    </task>
+    <task id="LOCAL‎-00005" summary="selenium_driver.py">
+      <option name="closed" value="true" />
+      <created>1723469065968</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723469065968</updated>
+    </task>
+    <task id="LOCAL‎-00006" summary="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;">
+      <option name="closed" value="true" />
+      <created>1723469176948</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723469176948</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial commit." />
+    <MESSAGE value="Test Commit." />
+    <MESSAGE value="argument_types.py" />
+    <MESSAGE value="argument_parser.py" />
+    <MESSAGE value="selenium_driver.py" />
+    <MESSAGE value="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;" />
+    <option name="LAST_COMMIT_MESSAGE" value="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;" />
   </component>
 </project>

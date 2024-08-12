@@ -5,9 +5,9 @@ from selenium.webdriver.common.by import By
 from argument_types import BrowserType, Browsers, DriverType, ParserArguments, Elements
 
 
-def get_driver(arg: BrowserType = Browsers[0]) -> DriverType:
+def get_driver(browser: BrowserType = Browsers[0]) -> DriverType:
     driver: Optional[DriverType] = None
-    match arg:
+    match browser.lower():
         case "chrome":
             driver = webdriver.Chrome()
         case "edge":
