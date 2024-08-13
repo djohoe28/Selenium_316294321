@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;">
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/selenium_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_driver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -23,21 +24,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "djohoe28"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;djohoe28&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/djohoe28/Selenium_316294321.git",
-    "accountId": "3bb4f11d-17a2-47bf-936e-181309f2d2dc"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/djohoe28/Selenium_316294321.git&quot;,
+    &quot;accountId&quot;: &quot;3bb4f11d-17a2-47bf-936e-181309f2d2dc&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2kYlSjUpFo8RGUNdmXFnGYJmh68" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -48,7 +49,8 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "settings.editor.selected.configurable": "vcs.Subversion"
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
 }]]></component>
   <component name="RunManager" selected="Python.Main - (None)">
@@ -191,7 +193,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723469176948</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎-00007" summary="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`">
+      <option name="closed" value="true" />
+      <created>1723469462389</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723469462389</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -201,6 +211,7 @@
     <MESSAGE value="argument_parser.py" />
     <MESSAGE value="selenium_driver.py" />
     <MESSAGE value="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;" />
-    <option name="LAST_COMMIT_MESSAGE" value="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;" />
+    <MESSAGE value="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`" />
   </component>
 </project>
