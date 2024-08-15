@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`">
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values">
+      <change afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_driver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,13 +46,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Main - Safari.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.Main - (None)">
+  <component name="RunManager" selected="Python.Main - Safari">
     <configuration name="Main - Chrome" type="PythonConfigurationType" factoryName="Python">
       <module name="Selenium_316294321" />
       <option name="ENV_FILES" value="" />
@@ -98,6 +98,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Main - Safari" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--browser safari" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Main - (None)" type="PythonConfigurationType" factoryName="Python">
       <module name="Selenium_316294321" />
       <option name="ENV_FILES" value="" />
@@ -124,7 +146,13 @@
       <item itemvalue="Python.Main - Chrome" />
       <item itemvalue="Python.Main - Help" />
       <item itemvalue="Python.Main - (None)" />
+      <item itemvalue="Python.Main - Safari" />
     </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.Main - Safari" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -201,7 +229,31 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723469462389</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎-00008" summary="FIXED:&#10;- selenium_driver.py&#10;- - Added SeleniumDriver class&#10;- - Refactored `args` to `arguments`&#10;- - Added demo &quot;submit&quot; methods">
+      <option name="closed" value="true" />
+      <created>1723556226816</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723556226816</updated>
+    </task>
+    <task id="LOCAL‎-00009" summary="Set all Elements properties as Optional.">
+      <option name="closed" value="true" />
+      <created>1723718525371</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723718525371</updated>
+    </task>
+    <task id="LOCAL‎-00010" summary="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values">
+      <option name="closed" value="true" />
+      <created>1723718662409</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723718662409</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -212,6 +264,9 @@
     <MESSAGE value="selenium_driver.py" />
     <MESSAGE value="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;" />
     <MESSAGE value="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`" />
-    <option name="LAST_COMMIT_MESSAGE" value="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`" />
+    <MESSAGE value="FIXED:&#10;- selenium_driver.py&#10;- - Added SeleniumDriver class&#10;- - Refactored `args` to `arguments`&#10;- - Added demo &quot;submit&quot; methods" />
+    <MESSAGE value="Set all Elements properties as Optional." />
+    <MESSAGE value="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values" />
   </component>
 </project>
