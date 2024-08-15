@@ -20,10 +20,10 @@ class ParserArguments:
 
 @dataclass
 class Elements:
-    level_label: WebElement
-    description: WebElement
-    comment: WebElement
-    comment_submit: WebElement
+    level_label: Optional[WebElement]
+    description: Optional[WebElement]
+    comment: Optional[WebElement]
+    comment_submit: Optional[WebElement]
     answer: Optional[WebElement]
     guess: Optional[WebElement]
     guess_submit: Optional[WebElement]
