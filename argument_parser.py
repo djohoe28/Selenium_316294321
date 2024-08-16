@@ -15,6 +15,7 @@ def get_parser_arguments() -> ParserArguments:
     parser.add_argument("-f", "--format",
                         choices=Formats, default=Formats[0],
                         help="Format of output file")
+    # TODO: Add level argument? Keep cookie cache?
     parser.add_argument("-o", "--output", type=Optional[str], help="Path to output file")
     args = parser.parse_args()
     return ParserArguments(**vars(args))
