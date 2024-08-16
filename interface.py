@@ -41,7 +41,7 @@ class Interface:
         # TODO: Indicate current Level to user (on entry / level up) -> make submits return an enum?
         while command.split(sep=" ", maxsplit=1)[0].lower() not in ["quit", "exit"]:
             # Wait for user input
-            command = input("All we have to decide is what to do with the time that is given us:")
+            command = input("All we have to decide is what to do with the time that is given us: ")
             # Separate query from command (if found)
             if " " in command:
                 command, query = command.split(sep=" ", maxsplit=1)
@@ -53,12 +53,12 @@ class Interface:
                     print(self.run.__doc__)
                 case "comment":
                     if query is None:
-                        query = input("Please enter a comment to submit:")
+                        query = input("Please enter a comment to submit: ")
                     response = self.driver.submit_comment(query)  # TODO: response: [answer, success] ?
                     print(response)
                 case "guess":
                     if query is None:
-                        query = input("Please enter a guess to submit:")
+                        query = input("Please enter a guess to submit: ")
                     response = self.driver.submit_guess(query)  # TODO: response: [answer, success] ?
                     print(response)
                 case "exit":
