@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values">
-      <change afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Added interface.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argument_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/argument_types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_driver.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,15 +45,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Main - Safari.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Main - Safari.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.Main - Safari">
     <configuration name="Main - Chrome" type="PythonConfigurationType" factoryName="Python">
       <module name="Selenium_316294321" />
@@ -253,7 +254,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723718662409</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL‎-00011" summary="Added interface.py">
+      <option name="closed" value="true" />
+      <created>1723718747680</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL‎-00011" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723718747680</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -267,6 +276,7 @@
     <MESSAGE value="FIXED:&#10;- selenium_driver.py&#10;- - Added SeleniumDriver class&#10;- - Refactored `args` to `arguments`&#10;- - Added demo &quot;submit&quot; methods" />
     <MESSAGE value="Set all Elements properties as Optional." />
     <MESSAGE value="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values" />
+    <MESSAGE value="Added interface.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added interface.py" />
   </component>
 </project>
