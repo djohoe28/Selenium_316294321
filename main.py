@@ -3,8 +3,7 @@ from argument_parser import get_parser_arguments
 
 
 def main():
-    args = get_parser_arguments()
-    interface.main(args)
+    interface.main(get_parser_arguments())
 
 
 if __name__ == '__main__':
