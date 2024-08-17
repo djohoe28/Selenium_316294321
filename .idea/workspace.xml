@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Renamed selenium_driver.py to controller.py">
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="In interface.py, leverage NoSuchElementException">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,17 +44,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.Main - (None).executor&quot;: &quot;Run&quot;,
-    &quot;Python.Main - Safari.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.Main - (None).executor": "Run",
+    "Python.Main - Safari.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.Main - (None)">
     <configuration name="Main - Help" type="PythonConfigurationType" factoryName="Python">
       <module name="Selenium_316294321" />
@@ -298,7 +296,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723885521461</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL‎-00019" summary="Refactored selenium_driver.py to controller.py">
+      <option name="closed" value="true" />
+      <created>1723885650237</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL‎-00019" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723885650237</updated>
+    </task>
+    <task id="LOCAL‎-00020" summary="In interface.py, leverage NoSuchElementException">
+      <option name="closed" value="true" />
+      <created>1723890093423</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL‎-00020" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723890093423</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,7 +345,9 @@
     <MESSAGE value="selenium_driver.py - level_label, cookies, STALE" />
     <MESSAGE value="argument_types.py Set Elements default to None" />
     <MESSAGE value="Renamed selenium_driver.py to controller.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="Renamed selenium_driver.py to controller.py" />
+    <MESSAGE value="Refactored selenium_driver.py to controller.py" />
+    <MESSAGE value="In interface.py, leverage NoSuchElementException" />
+    <option name="LAST_COMMIT_MESSAGE" value="In interface.py, leverage NoSuchElementException" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
