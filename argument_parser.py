@@ -1,7 +1,7 @@
 import argparse
 from typing import Optional
 
-from argument_types import ParserArguments, Browsers, Formats
+from argument_types import ParserArguments, Browsers, Formats, FormatType
 
 
 def get_parser_arguments() -> ParserArguments:
@@ -12,11 +12,15 @@ def get_parser_arguments() -> ParserArguments:
     parser.add_argument("-u", "--url",
                         default="https://gandalf.lakera.ai/gandalf-the-white",
                         help="Base URL for Selenium to use")
-    parser.add_argument("-f", "--format",
-                        choices=Formats, default=Formats[0],
-                        help="Format of output file")
-    # TODO: Add level argument? Keep cookie cache?
-    parser.add_argument("-o", "--output", type=Optional[str], help="Path to output file")
+    parser.add_argument("-k", "--keep",
+                        action="store_true", default=False,
+                        help="Flag to disable cookie deletion when opening Selenium")
+    # Output Group
+    group = parser.add_mutually_exclusive_group()
+    group.add_argument("-f", "--format", choices=Formats,  # type=Optional[FormatType], default=Formats[0],
+                       help="Format of output ('stdout' = print to standard output, file extension = 'output.{ext}'")
+    group.add_argument("-o", "--output",
+                       help=f"Path for file output (supported extensions: {Formats}, defaults to 'txt')")
     args = parser.parse_args()
     return ParserArguments(**vars(args))
 
