@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="In interface.py, leverage NoSuchElementException">
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Simplified interface.py, and added closure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
     </list>
@@ -35,6 +35,9 @@
     &quot;accountId&quot;: &quot;3bb4f11d-17a2-47bf-936e-181309f2d2dc&quot;
   }
 }</component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -46,17 +49,91 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.Args (format=json).executor": "Run",
+    "Python.Args (output=out.json).executor": "Run",
+    "Python.Main (CSV).executor": "Run",
+    "Python.Main (JSON).executor": "Run",
+    "Python.Main (TXT).executor": "Run",
+    "Python.Main (main.json).executor": "Debug",
     "Python.Main - (None).executor": "Run",
     "Python.Main - Safari.executor": "Run",
     "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/DJoho/PycharmProjects/Selenium_316294321/test.txt",
+    "run.code.analysis.last.selected.profile": "aDefault",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.Main - (None)">
-    <configuration name="Main - Help" type="PythonConfigurationType" factoryName="Python">
+  <component name="RunManager" selected="Python.Main (main.json)">
+    <configuration name="Args (format=json)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/argument_parser.py" />
+      <option name="PARAMETERS" value="--format json" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Args (output=out.json)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/argument_parser.py" />
+      <option name="PARAMETERS" value="--output &quot;out.json&quot;" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main (CSV)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--format csv" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="true" />
+      <option name="INPUT_FILE" value="C:\Users\DJoho\PycharmProjects\Selenium_316294321\test.txt" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main (Help)" type="PythonConfigurationType" factoryName="Python">
       <module name="Selenium_316294321" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -78,7 +155,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Main - Safari" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="Main (JSON)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Selenium_316294321" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -92,15 +169,15 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
-      <option name="PARAMETERS" value="--browser safari" />
+      <option name="PARAMETERS" value="--format json" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
+      <option name="REDIRECT_INPUT" value="true" />
+      <option name="INPUT_FILE" value="C:\Users\DJoho\PycharmProjects\Selenium_316294321\test.txt" />
       <method v="2" />
     </configuration>
-    <configuration name="Main - (None)" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="Main (None)" type="PythonConfigurationType" factoryName="Python">
       <module name="Selenium_316294321" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -122,14 +199,90 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Main (Safari)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--browser safari" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main (TXT)" type="PythonConfigurationType" factoryName="Python">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--format txt" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="true" />
+      <option name="INPUT_FILE" value="C:\Users\DJoho\PycharmProjects\Selenium_316294321\test.txt" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Main (main.json)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Selenium_316294321" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="--output main.json" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="true" />
+      <option name="INPUT_FILE" value="C:\Users\DJoho\PycharmProjects\Selenium_316294321\test.txt" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.Main - Help" />
-      <item itemvalue="Python.Main - (None)" />
-      <item itemvalue="Python.Main - Safari" />
+      <item itemvalue="Python.Main (TXT)" />
+      <item itemvalue="Python.Main (Help)" />
+      <item itemvalue="Python.Main (None)" />
+      <item itemvalue="Python.Main (JSON)" />
+      <item itemvalue="Python.Main (main.json)" />
+      <item itemvalue="Python.Main (CSV)" />
+      <item itemvalue="Python.Args (format=json)" />
+      <item itemvalue="Python.Args (output=out.json)" />
+      <item itemvalue="Python.Main (Safari)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Main - Safari" />
+        <item itemvalue="Python.Main (main.json)" />
+        <item itemvalue="Python.Main (JSON)" />
+        <item itemvalue="Python.Main (CSV)" />
+        <item itemvalue="Python.Args (format=json)" />
+        <item itemvalue="Python.Args (output=out.json)" />
       </list>
     </recent_temporary>
   </component>
@@ -312,7 +465,55 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723890093423</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL‎-00021" summary="Updated controller.py to prevent stale elements&#10;More explicit Exceptions usage&#10;More documentation&#10;Refactored _is_queried to _is_interacted&#10;Removed destructor due to race condition">
+      <option name="closed" value="true" />
+      <created>1723890287218</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL‎-00021" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723890287218</updated>
+    </task>
+    <task id="LOCAL‎-00022" summary="Added test.txt">
+      <option name="closed" value="true" />
+      <created>1723898607150</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL‎-00022" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723898607150</updated>
+    </task>
+    <task id="LOCAL‎-00023" summary="Edited ParserArgument doc in argument_types.py">
+      <option name="closed" value="true" />
+      <created>1723898641021</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL‎-00023" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723898641021</updated>
+    </task>
+    <task id="LOCAL‎-00024" summary="Removed `args` from main.py">
+      <option name="closed" value="true" />
+      <created>1723898664594</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL‎-00024" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723898664594</updated>
+    </task>
+    <task id="LOCAL‎-00025" summary="+ `--keep`, output group in argument_parser.py">
+      <option name="closed" value="true" />
+      <created>1723898726628</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL‎-00025" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723898726628</updated>
+    </task>
+    <task id="LOCAL‎-00026" summary="Simplified interface.py, and added closure">
+      <option name="closed" value="true" />
+      <created>1723898760832</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL‎-00026" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723898760832</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -327,7 +528,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit." />
     <MESSAGE value="Test Commit." />
     <MESSAGE value="argument_types.py" />
     <MESSAGE value="argument_parser.py" />
@@ -347,7 +547,13 @@
     <MESSAGE value="Renamed selenium_driver.py to controller.py" />
     <MESSAGE value="Refactored selenium_driver.py to controller.py" />
     <MESSAGE value="In interface.py, leverage NoSuchElementException" />
-    <option name="LAST_COMMIT_MESSAGE" value="In interface.py, leverage NoSuchElementException" />
+    <MESSAGE value="Updated controller.py to prevent stale elements&#10;More explicit Exceptions usage&#10;More documentation&#10;Refactored _is_queried to _is_interacted&#10;Removed destructor due to race condition" />
+    <MESSAGE value="Added test.txt" />
+    <MESSAGE value="Edited ParserArgument doc in argument_types.py" />
+    <MESSAGE value="Removed `args` from main.py" />
+    <MESSAGE value="+ `--keep`, output group in argument_parser.py" />
+    <MESSAGE value="Simplified interface.py, and added closure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplified interface.py, and added closure" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

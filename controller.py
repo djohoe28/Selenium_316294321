@@ -1,52 +1,24 @@
-from typing import Optional
+import json
+import csv
+from datetime import datetime
+from json import JSONDecodeError
+from typing import Optional, Literal
 from selenium import webdriver
 from selenium.common import NoSuchDriverException, NoSuchElementException, ElementNotInteractableException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 
-from argument_types import BrowserType, Browsers, DriverType, ParserArguments, Elements
-
-
-def get_driver(browser: BrowserType = Browsers[0]) -> DriverType:
-    """
-    Gets a new Selenium WebDriver instance by the name of the browser.
-
-    :param BrowserType browser: The type of browser to use
-    :return: The requested :class:`WebDriver`
-    :rtype: DriverType
-    """
-    driver: Optional[DriverType] = None
-    match browser.lower():
-        case "chrome":
-            driver = webdriver.Chrome()
-        case "edge":
-            driver = webdriver.Edge()
-        case "firefox":
-            driver = webdriver.Firefox()
-        case "safari":
-            driver = webdriver.Safari()
-        case "auto":
-            # Iterate through other drivers and find the first one that works.
-            for browser in Browsers:
-                if browser == "auto":
-                    # Skips "auto" to prevent infinite recursion
-                    continue
-                try:
-                    driver = get_driver(browser)
-                except NoSuchDriverException:
-                    print(f"No driver found for \"{browser}\".")
-                if driver is not None:
-                    print(f"Driver found for \"{browser}\".")
-                    break
-        case _:
-            raise NoSuchDriverException(f"Browser Type not recognized: {browser}")
-    return driver
+from argument_types import BrowserType, Browsers, DriverType, ParserArguments, Elements, Formats
 
 
 class Controller:
     """Class used to streamline interacting with the webpage via Selenium WebDriver"""
     _arguments: ParserArguments
     """Parser Arguments received upon initialization"""
+    _output_path: Optional[str]
+    """The output file path to print to (None = standard output)"""
+    _output_encoding: str = "utf"  # Used instead of hard-coding 'utf' everywhere.
+    """Encoding for output file"""
     _driver: DriverType
     """The Selenium WebDriver used"""
     _elements: Elements
@@ -57,6 +29,7 @@ class Controller:
     """Used to indicate whether an initial comment (message) has been sent to the chatbot"""
     _is_submitted: bool  # TODO: Unused?
     """Used to indicate that a password guess has been submitted; Returns to False when customAlert is closed"""
+    _last_comment: Optional[str]
 
     def __init__(self, arguments: ParserArguments):
         """
@@ -65,18 +38,33 @@ class Controller:
         :param ParserArguments arguments: Parser Arguments for initialization
         :raises NoSuchDriverException: The `browser` field for the given :param:`arguments` was not recognized
         """
-        self._arguments = arguments  # TODO: address url argument
+        self._arguments = arguments
         try:
-            self._driver = get_driver(self._arguments.browser)
+            if self._arguments.output is not None:  # Print to designated file
+                self._output_path = self._arguments.output
+            elif self._arguments.format is not None:
+                if self._arguments.format == "stdout":  # Print to standard output
+                    self._output_path = None
+                else:  # Print to file 'output.{format}'
+                    self._output_path = f"output.{self._arguments.format}"
+            else:
+                raise ValueError("No output or format found")
+        except ValueError as ex:
+            print(*ex.args, "Falling back to 'stdout' (standard output)", sep="; ")
+            self._output_path = None
+        try:
+            self._driver = self.create_driver(self._arguments.browser)
         except NoSuchDriverException as ex:
-            print(ex.msg, f"Falling back to \"{BrowserType[0]}\"", sep="; ")
-            self._driver = get_driver(BrowserType[0])
-        self._driver.delete_all_cookies()  # TODO: Parser Argument
-        self._wait = WebDriverWait(self._driver, timeout=2, poll_frequency=.2,
+            self.print(ex.msg, f"Falling back to '{BrowserType[0]}'", sep="; ")
+            self._driver = self.create_driver(BrowserType[0])
+        if not self._arguments.keep:
+            self._driver.delete_all_cookies()
+        self._wait = WebDriverWait(self._driver, timeout=10, poll_frequency=.2,
                                    ignored_exceptions=[NoSuchElementException, ElementNotInteractableException])
         self._driver.get(self._arguments.url)
         self._elements = Elements()
         self._start_level()
+        self._last_comment = None
 
     # def __del__(self):
     #     """
@@ -88,12 +76,91 @@ class Controller:
     def __str__(self):
         return f"{self._elements.level_label.text}: {self._elements.description.text}"
 
+    def close(self):
+        """Closes the underlying Selenium WebDriver"""
+        self._driver.close()
+
+    def print(self, *values: object,
+              sep: Optional[str] = " ",
+              end: Optional[str] = "\n",
+              flush: Literal[False] = False) -> None:
+        """
+        Prints the values to a file-like object (stream), or to `sys.stdout` by default.
+        Custom facade for :py:func:`print` to support `stdout` or [TXT, CSV, JSON] files.
+
+        :param *object values: Values to print
+        :param Optional[str] sep: string inserted between values, default a space.
+        :param Optional[str] end: string appended after the last value, default a newline.
+        :param Literal[False] flush: whether to forcibly flush the stream.
+        :return: None
+        :rtype: NoneType
+        """
+        if self._output_path is None:  # Print to standard output
+            print(*values, sep=sep, end=end, file=None, flush=flush)
+        else:
+            if self._output_path.endswith(".json"):  # Print to JSON file
+                try:
+                    with open(self._output_path, "r", encoding=self._output_encoding) as file:
+                        obj = json.loads(file.read())
+                except (FileNotFoundError, JSONDecodeError):  # Failed to read from file
+                    obj = []
+                with open(self._output_path, "w+", encoding=self._output_encoding) as file:
+                    for value in values:
+                        obj.append(value)
+                    json.dump(obj, file)  # TODO: Clear JSON in __init__
+            elif self._output_path.endswith(".csv"):  # Print to CSV file
+                with open(self._output_path, "a+", encoding=self._output_encoding, newline="") as file:
+                    reader = csv.reader(file)
+                    line_num = reader.line_num
+                    del reader
+                    writer = csv.writer(file)  # TODO: Add CSV header in __init__ ?
+                    for value in values:
+                        writer.writerow([line_num, datetime.now(), str(value)])  # TODO: Better row definition
+            else:  # Print to file as regular text ('txt')
+                with open(self._output_path, "a+", encoding=self._output_encoding) as file:
+                    print(*values, sep=sep, end=end, file=file, flush=flush)
+
+    def create_driver(self, browser: BrowserType = Browsers[0]) -> DriverType:
+        """
+        Creates a new Selenium WebDriver instance, type determined by the name of the browser.
+
+        :param BrowserType browser: The type of browser to use
+        :return: The requested :class:`WebDriver`
+        :rtype: DriverType
+        """
+        driver: Optional[DriverType] = None
+        match browser.lower():
+            case "chrome":
+                driver = webdriver.Chrome()
+            case "edge":
+                driver = webdriver.Edge()
+            case "firefox":
+                driver = webdriver.Firefox()
+            case "safari":
+                driver = webdriver.Safari()
+            case "auto":
+                # Iterate through other drivers and find the first one that works.
+                for browser in Browsers:
+                    if browser == "auto":
+                        # Skips "auto" to prevent infinite recursion
+                        continue
+                    try:
+                        driver = self.create_driver(browser)
+                    except NoSuchDriverException:
+                        self.print(f"No driver found for '{browser}'.")
+                    if driver is not None:
+                        self.print(f"Driver found for '{browser}'.")
+                        break
+            case _:
+                raise NoSuchDriverException(f"Browser Type not recognized: {browser}")
+        return driver
+
     def _start_level(self):
         """Refresh the stored state of the webpage"""
         self._is_interacted = False
         self._is_submitted = False
         self._get_all_elements()
-        print(self)
+        self.print(str(self))  # Happens before
 
     def _get_all_elements(self):
         """
@@ -116,15 +183,18 @@ class Controller:
         :param str value: The comment to submit
         :return: The answer from the chatbot
         :rtype: str
-        :raises BlockingIOError: Prompt must be at least 10 characters long
+        :raises ValueError: Prompt must be at least 10 characters long
         :raises NoSuchElementException: Couldn't get answer / guess elements
         """
         if len(value) < 10:
-            raise BlockingIOError("Prompt must be at least 10 characters long.")
+            raise ValueError(f"Prompt must be at least 10 characters long ({value})")
+        if value == self._last_comment:
+            raise ValueError(f"Prompt cannot be the same as the previous prompt ({value})")
         self._elements.comment.clear()
         self._elements.comment.send_keys(value)
         self._elements.comment_submit.click()
         self._is_interacted = True
+        self._last_comment = value  # TODO: Move?
         self._wait.until(lambda _: self._get_answer_elements())
         if not self._has_answer_elements:
             raise NoSuchElementException("Couldn't get answer elements.")
@@ -132,7 +202,7 @@ class Controller:
         # TODO: Move?
         if not self._has_guess_elements:
             raise NoSuchElementException("Couldn't get guess elements")
-        print("(Psst! You can guess the answer now!)")
+        self.print("(Psst! You can guess the answer now!)")
         return self._elements.answer.text
 
     def submit_guess(self, value: str) -> str:
@@ -149,13 +219,14 @@ class Controller:
         self._elements.guess.clear()
         self._elements.guess.send_keys(value)
         self._elements.guess_submit.click()
+        # Handle the alert modal
         self._wait.until(lambda _: self._get_alert_elements())
         if not self._has_alert_elements:
             raise NoSuchElementException("Couldn't get customAlert elements.")
         answer = f"{self._elements.alert_title.text}: {self._elements.alert_text.text}"  # TODO: Check if answer correct
         self._elements.alert_submit.click()
         if answer.startswith("You guessed the password!"):
-            self._start_level()
+            self._start_level()  # TODO: This prints level details before returning the answer for printing...
         return answer
 
     @property
