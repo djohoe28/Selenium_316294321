@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Added WebDriverWait under selenium_driver.py&#10;Added alert elements in argument_types.py&#10;Added some documentation">
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Renamed selenium_driver.py to controller.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argument_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/argument_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/selenium_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/selenium_driver.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/selenium_driver.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,17 +46,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Main - (None).executor": "Run",
-    "Python.Main - Safari.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Main - (None).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main - Safari.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.Main - (None)">
     <configuration name="Main - Help" type="PythonConfigurationType" factoryName="Python">
       <module name="Selenium_316294321" />
@@ -251,8 +250,67 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723804722425</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL‎-00013" summary="(minor) added spaces to interface.py">
+      <option name="closed" value="true" />
+      <created>1723806034146</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL‎-00013" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723806034146</updated>
+    </task>
+    <task id="LOCAL‎-00014" summary="(minor) refactored main.py to use interface.py">
+      <option name="closed" value="true" />
+      <created>1723806058444</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL‎-00014" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723806058444</updated>
+    </task>
+    <task id="LOCAL‎-00015" summary="(TODO) added to argument_parser.py">
+      <option name="closed" value="true" />
+      <created>1723806077457</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL‎-00015" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723806077457</updated>
+    </task>
+    <task id="LOCAL‎-00016" summary="selenium_driver.py - level_label, cookies, STALE">
+      <option name="closed" value="true" />
+      <created>1723806113945</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL‎-00016" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723806113945</updated>
+    </task>
+    <task id="LOCAL‎-00017" summary="argument_types.py Set Elements default to None">
+      <option name="closed" value="true" />
+      <created>1723885482780</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL‎-00017" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723885482780</updated>
+    </task>
+    <task id="LOCAL‎-00018" summary="Renamed selenium_driver.py to controller.py">
+      <option name="closed" value="true" />
+      <created>1723885521461</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL‎-00018" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723885521461</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit." />
@@ -267,14 +325,20 @@
     <MESSAGE value="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values" />
     <MESSAGE value="Added interface.py" />
     <MESSAGE value="Added WebDriverWait under selenium_driver.py&#10;Added alert elements in argument_types.py&#10;Added some documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added WebDriverWait under selenium_driver.py&#10;Added alert elements in argument_types.py&#10;Added some documentation" />
+    <MESSAGE value="(minor) added spaces to interface.py" />
+    <MESSAGE value="(minor) refactored main.py to use interface.py" />
+    <MESSAGE value="(TODO) added to argument_parser.py" />
+    <MESSAGE value="selenium_driver.py - level_label, cookies, STALE" />
+    <MESSAGE value="argument_types.py Set Elements default to None" />
+    <MESSAGE value="Renamed selenium_driver.py to controller.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Renamed selenium_driver.py to controller.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/selenium_driver.py</url>
-          <line>107</line>
+          <url>file://$PROJECT_DIR$/controller.py</url>
+          <line>109</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>

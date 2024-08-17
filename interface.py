@@ -1,19 +1,21 @@
 from typing import Optional, Union, Any
 
 from argument_types import ParserArguments
-from selenium_driver import SeleniumDriver
+from controller import Controller
 
 
 class Interface:
-    driver: SeleniumDriver
+    """Command Line Interface class for :class:`Controller`"""
+    _controller: Controller
+    """The underlying :class:`Controller` instance"""
 
-    def __init__(self, args_or_driver: Union[ParserArguments, SeleniumDriver]):
-        if isinstance(args_or_driver, SeleniumDriver):
-            self.driver = args_or_driver
+    def __init__(self, args_or_driver: Union[ParserArguments, Controller]):
+        if isinstance(args_or_driver, Controller):
+            self._controller = args_or_driver
         elif isinstance(args_or_driver, ParserArguments):
-            self.driver = SeleniumDriver(args_or_driver)
+            self._controller = Controller(args_or_driver)
         else:
-            raise ValueError(f"Parameter must be either ParserArguments or SeleniumDriver.")
+            raise ValueError(f"Parameter must be either ParserArguments or Controller.")
 
     def run(self):
         """
@@ -36,10 +38,11 @@ class Interface:
         query: Optional[str] = None
         """Query received via user input; Expecting any comment/guess string. Not used outside loop."""
         response: Any = None
-        """The response from :class:`SeleniumDriver` to the comment/guess. Not used outside loop."""
-        print("I am Gandalf, and Gandalf means me!")
+        """The response from :class:`Controller` to the comment/guess. Not used outside loop."""
+        print("I am Gandalf, and Gandalf means me! (If you don't know what to do, enter 'help'!)")
         # TODO: Indicate current Level to user (on entry / level up) -> make submits return an enum?
         while command.split(sep=" ", maxsplit=1)[0].lower() not in ["quit", "exit"]:
+            print(self._controller)
             # Wait for user input
             command = input("All we have to decide is what to do with the time that is given us: ")
             # Separate query from command (if found)
@@ -54,12 +57,12 @@ class Interface:
                 case "comment":
                     if query is None:
                         query = input("Please enter a comment to submit: ")
-                    response = self.driver.submit_comment(query)  # TODO: response: [answer, success] ?
+                    response = self._controller.submit_comment(query)  # TODO: response: [answer, success] ?
                     print(response)
                 case "guess":
                     if query is None:
                         query = input("Please enter a guess to submit: ")
-                    response = self.driver.submit_guess(query)  # TODO: response: [answer, success] ?
+                    response = self._controller.submit_guess(query)  # TODO: response: [answer, success] ?
                     print(response)
                 case "exit":
                     break
@@ -71,7 +74,7 @@ class Interface:
 
 
 def main(arguments: Optional[ParserArguments] = None):
-    instance = Interface(SeleniumDriver(arguments))
+    instance = Interface(Controller(arguments))
     instance.run()
 
 

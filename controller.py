@@ -38,8 +38,8 @@ def get_driver(browser: BrowserType = Browsers[0]) -> DriverType:
     return driver
 
 
-class SeleniumDriver:
-    """Class used to streamline handling the Selenium Driver"""
+class Controller:
+    """Class used to streamline handling the Controller"""
     _arguments: ParserArguments
     """Parser Arguments received upon initialization"""
     _driver: DriverType
@@ -54,7 +54,7 @@ class SeleniumDriver:
     """Used to indicate that a password guess has been submitted; Returns to False when customAlert is closed"""
 
     def __init__(self, arguments: ParserArguments):
-        """:class:`SeleniumDriver` Constructor - initializes all :py:attr:`_elements`"""
+        """:class:`Controller` Constructor - initializes all :py:attr:`_elements`"""
         self._arguments = arguments  # TODO: address url argument
         self._driver = get_driver(self._arguments.browser)
         self._driver.delete_all_cookies()  # TODO: Parser Argument
@@ -67,7 +67,7 @@ class SeleniumDriver:
         print(self._elements.level_label.text)  # TODO: Move?
 
     def __del__(self):
-        """:class:`SeleniumDriver` Destructor - automatically closes the Selenium WebDriver instance."""
+        """:class:`Controller` Destructor - automatically closes the Selenium WebDriver instance."""
         self._driver.close()
 
     def _get_all_elements(self):
@@ -165,7 +165,7 @@ class SeleniumDriver:
 
 
 def main(arguments: Optional[ParserArguments] = None):
-    instance = SeleniumDriver(arguments)
+    instance = Controller(arguments)
 
 
 if __name__ == '__main__':

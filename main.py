@@ -1,5 +1,4 @@
 import interface
-import selenium_driver
 from argument_parser import get_parser_arguments
 
 
