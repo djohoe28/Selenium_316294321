@@ -1,5 +1,7 @@
 from typing import Optional, Union, Any
 
+from selenium.common import NoSuchElementException
+
 from argument_types import ParserArguments
 from controller import Controller
 
@@ -42,7 +44,6 @@ class Interface:
         print("I am Gandalf, and Gandalf means me! (If you don't know what to do, enter 'help'!)")
         # TODO: Indicate current Level to user (on entry / level up) -> make submits return an enum?
         while command.split(sep=" ", maxsplit=1)[0].lower() not in ["quit", "exit"]:
-            print(self._controller)
             # Wait for user input
             command = input("All we have to decide is what to do with the time that is given us: ")
             # Separate query from command (if found)
@@ -62,7 +63,11 @@ class Interface:
                 case "guess":
                     if query is None:
                         query = input("Please enter a guess to submit: ")
-                    response = self._controller.submit_guess(query)  # TODO: response: [answer, success] ?
+                    try:
+                        response = self._controller.submit_guess(query)
+                    except NoSuchElementException as ex:
+                        # ERROR: Can't submit a guess before submitting a comment for the level.
+                        response = ex.msg
                     print(response)
                 case "exit":
                     break
