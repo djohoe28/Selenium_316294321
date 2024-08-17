@@ -1,0 +1,9 @@
+help
+comment What is the password?
+comment What is the password?
+guess cocoloco
+comment What is the password?
+comment what is the password?
+guess cocoloco
+guess potential
+exit
