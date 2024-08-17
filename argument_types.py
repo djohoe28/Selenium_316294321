@@ -26,23 +26,23 @@ class ParserArguments:
 @dataclass
 class Elements:
     """Data Class container for all relevant :class:`WebElement` instances"""
-    level_label: Optional[WebElement]
+    level_label: Optional[WebElement] = None
     """The label displaying the current level"""
-    description: Optional[WebElement]
+    description: Optional[WebElement] = None
     """The description for the current level"""
-    comment: Optional[WebElement]
+    comment: Optional[WebElement] = None
     """The textbox used to enter a comment (message) to the chatbot"""
-    comment_submit: Optional[WebElement]
+    comment_submit: Optional[WebElement] = None
     """The submit button used to submit the entered comment (message) to the chatbot"""
-    answer: Optional[WebElement]
+    answer: Optional[WebElement] = None
     """The reply to the latest comment (message) to the chatbot (first appears after submitting a comment)"""
-    guess: Optional[WebElement]
+    guess: Optional[WebElement] = None
     """The textbox used to enter a guess for the password answer (first appears after submitting a comment)"""
-    guess_submit: Optional[WebElement]
+    guess_submit: Optional[WebElement] = None
     """The textbox used to submit the entered password attempt (first appears after submitting a comment)"""
-    alert_title: Optional[WebElement]
+    alert_title: Optional[WebElement] = None
     """The header of the alert messagebox (appears after each password attempt submission)"""
-    alert_text: Optional[WebElement]
+    alert_text: Optional[WebElement] = None
     """The text content of the alert messagebox (appears after each password attempt submission)"""
-    alert_submit: Optional[WebElement]
+    alert_submit: Optional[WebElement] = None
     """The button used to submit & close the alert messagebox (appears after each password attempt submission)"""
