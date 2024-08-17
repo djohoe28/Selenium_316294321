@@ -17,10 +17,12 @@ class ParserArguments:
     """Browser for Selenium to use"""
     url: str
     """Base URL for Selenium to use"""
-    format: FormatType
-    """Format of output file (stdout = print to standard output)"""
-    output: str
-    """Path to output file"""
+    keep: bool
+    """Flag to disable cookie deletion when opening Selenium"""
+    format: Optional[FormatType]
+    """Format of output; Cannot be used with Output ('stdout' = print to standard output, extension = 'output.{ext}')"""
+    output: Optional[str]
+    """Output file path; Cannot be used with Format"""
 
 
 @dataclass
