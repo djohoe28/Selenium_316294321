@@ -1,4 +1,4 @@
-from typing import Optional, Literal, List, get_args
+from typing import Optional, Literal, List, get_args, AnyStr
 from dataclasses import dataclass
 from selenium.webdriver.remote.webelement import WebElement
 
@@ -17,12 +17,16 @@ class ParserArguments:
     """Data Class container for all available :class:`argparse.ArgumentParser` arguments"""
     browser: BrowserType
     """Browser for Selenium to use."""
-    url: str
-    """Base URL for Selenium to use."""
+    url: AnyStr
+    """Base URL for Selenium to use. (NOTE: Generally shouldn't be changed!)"""
     keep: bool
     """Flag to disable cookie deletion when opening Selenium."""
+    timeout: float
+    """How long should Selenium wait for responses before timing out?"""
+    poll_frequency: float
+    """How frequently should Selenium poll for responses?"""
     format: Optional[FormatType]
-    """Format of output; Cannot be used with Output ('stdout' = print to standard output, extension = 'output.{ext}')"""
+    """Format of output; Cannot be used with Output (`stdout` = print to standard output, extension = `output.{ext}`)"""
     output: Optional[str]
     """Output file path; Cannot be used with Format."""
 

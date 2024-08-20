@@ -57,7 +57,8 @@ class Controller:
             self._driver = self.create_driver(BrowserType[0])
         if not self._arguments.keep:
             self._driver.delete_all_cookies()
-        self._wait = WebDriverWait(self._driver, timeout=10, poll_frequency=.2,  # TODO: timeout & poll_frequency CLI
+        self._wait = WebDriverWait(self._driver,
+                                   timeout=self._arguments.timeout, poll_frequency=self._arguments.poll_frequency,
                                    ignored_exceptions=[NoSuchElementException, ElementNotInteractableException])
         self._driver.get(self._arguments.url)
         self._elements = Elements()
@@ -67,7 +68,7 @@ class Controller:
     # def __del__(self):
     #     """
     #     :class:`Controller` Destructor - automatically closes the :class:`WebDriver` instance.
-    #     NOTE: Disabled because it apparently causes a race condition.
+    #     NOTE: Disabled because it appears to cause a race condition.
     #     """
     #     self._driver.close()
 

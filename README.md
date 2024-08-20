@@ -43,3 +43,4 @@ For CLI instructions, please run `main.py --help` in Command Prompt or equivalen
 
 - Encrypt output
 - Pass all levels when no arguments are given
+- Better CSV & JSON integrations
