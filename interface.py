@@ -7,9 +7,9 @@ from controller import Controller
 
 
 class Interface:
-    """Command Line Interface class for :class:`Controller`"""
+    """Command Line Interface class for :class:`Controller`."""
     _controller: Controller
-    """The underlying :class:`Controller` instance"""
+    """The underlying :class:`Controller` instance."""
 
     def __init__(self, args_or_driver: Union[ParserArguments, Controller]):
         if isinstance(args_or_driver, Controller):
@@ -36,7 +36,7 @@ class Interface:
             Terminate the program.
         """
         command: str = ""
-        """Command received via user input; Expecting string literal in ['help', 'comment', 'guess', 'quit', 'exit']"""
+        """Command received via user input; Expecting string literal in ['help', 'comment', 'guess', 'quit', 'exit']."""
         query: Optional[str] = None
         """Query received via user input; Expecting any comment/guess string. Not used outside loop."""
         response: Any = None
