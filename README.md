@@ -26,11 +26,11 @@ For CLI instructions, please run `main.py --help` in Command Prompt or equivalen
 
 # Modules
 
-- `argument_types.py` - Header file used to declare types, constants, and data classes.
-- `argument_parser.py` - Generates the argument parser using `argparse`, and parses the arguments given.
-- `controller.py` - Class used to streamline interacting with the webpage via the desired `WebDriver` instance.
-- `interface.py` - Class used to have the Command Line interface with `Controller`.
-- `main.py` - Used to run the program.
+- [argument_types.py](argument_types.py) - Header file used to declare types, constants, and data classes.
+- [argument_parser.py](argument_parser.py) - Generates the argument parser using `argparse`, and parses the arguments given.
+- [controller.py](controller.py) - Class used to streamline interacting with the webpage via the desired `WebDriver` instance.
+- [interface.py](interface.py) - Class used to have the Command Line interface with `Controller`.
+- [main.py](main.py) - Used to run the program.
 
 # Libraries
 

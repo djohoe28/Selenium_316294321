@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Added `timeout` &amp; `poll_frequency` arguments">
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="(linting) argument_parser.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/argument_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/argument_parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,26 +47,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.Args (format=json).executor": "Run",
-    "Python.Args (output=out.json).executor": "Run",
-    "Python.Main (CSV).executor": "Run",
-    "Python.Main (Help).executor": "Run",
-    "Python.Main (JSON).executor": "Run",
-    "Python.Main (TXT).executor": "Run",
-    "Python.Main (main.json).executor": "Debug",
-    "Python.Main - (None).executor": "Run",
-    "Python.Main - Safari.executor": "Run",
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/DJoho/PycharmProjects/Selenium_316294321/test.txt",
-    "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.Args (format=json).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Args (output=out.json).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main (CSV).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main (Help).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main (JSON).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main (TXT).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main (main.json).executor&quot;: &quot;Debug&quot;,
+    &quot;Python.Main - (None).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Main - Safari.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/DJoho/PycharmProjects/Selenium_316294321/test.txt&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;aDefault&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Python.Main (Help)">
     <configuration name="Args (format=json)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Selenium_316294321" />
@@ -562,7 +562,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1724182048363</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL‎-00033" summary="(linting) argument_parser.py">
+      <option name="closed" value="true" />
+      <created>1724182134243</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL‎-00033" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1724182134243</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -577,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`" />
     <MESSAGE value="FIXED:&#10;- selenium_driver.py&#10;- - Added SeleniumDriver class&#10;- - Refactored `args` to `arguments`&#10;- - Added demo &quot;submit&quot; methods" />
     <MESSAGE value="Set all Elements properties as Optional." />
     <MESSAGE value="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values" />
@@ -602,7 +609,8 @@
     <MESSAGE value="Standardized `interface.py` docs to end with periods." />
     <MESSAGE value="Added README.md &amp; `main()` documentation" />
     <MESSAGE value="Added `timeout` &amp; `poll_frequency` arguments" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added `timeout` &amp; `poll_frequency` arguments" />
+    <MESSAGE value="(linting) argument_parser.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="(linting) argument_parser.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
