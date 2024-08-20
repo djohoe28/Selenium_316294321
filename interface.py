@@ -7,7 +7,7 @@ from controller import Controller
 
 
 class Interface:
-    """Command Line Interface class for :class:`Controller`."""
+    """Class used to have the Command Line interface with :class:`Controller`."""
     _controller: Controller
     """The underlying :class:`Controller` instance."""
 
@@ -82,6 +82,7 @@ class Interface:
 
 
 def main(arguments: Optional[ParserArguments] = None):
+    """Main function; Runs a new :class:`Interface` with the :class:`Controller` class with given CLI arguments."""
     instance = Interface(Controller(arguments))
     instance.run()
 

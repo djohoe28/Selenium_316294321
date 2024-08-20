@@ -1,10 +1,9 @@
 import argparse
-from typing import Optional
-
-from argument_types import ParserArguments, Browsers, Formats, FormatType
+from argument_types import ParserArguments, Browsers, Formats
 
 
 def get_parser_arguments() -> ParserArguments:
+    """Generates the argument parser using `argparse`, and parses the arguments given."""
     parser = argparse.ArgumentParser()
     parser.add_argument("-b", "--browser",
                         choices=Browsers, default=Browsers[0],
@@ -26,6 +25,7 @@ def get_parser_arguments() -> ParserArguments:
 
 
 def main():
+    """Main function; prints the parsed CLI arguments."""
     args = get_parser_arguments()
     print(args)
 

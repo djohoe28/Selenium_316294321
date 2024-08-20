@@ -8,8 +8,7 @@ from selenium.common import NoSuchDriverException, NoSuchElementException, Eleme
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.remote.webdriver import WebDriver
-
-from argument_types import BrowserType, Browsers, ParserArguments, Elements, Formats
+from argument_types import BrowserType, Browsers, ParserArguments, Elements
 
 
 class Controller:
@@ -28,8 +27,6 @@ class Controller:
     """Used to have the :class:`WebDriver` wait for something to happen."""
     _is_interacted: bool
     """Used to indicate whether an initial comment (message) has been sent to the chatbot."""
-    _is_submitted: bool  # TODO: Unused?
-    """Used to indicate that a password guess has been submitted; Returns to False when customAlert is closed."""
     _last_comment: Optional[str]
 
     def __init__(self, arguments: ParserArguments):
@@ -159,7 +156,6 @@ class Controller:
     def _start_level(self):
         """Refresh the stored state of the webpage."""
         self._is_interacted = False
-        self._is_submitted = False
         self._get_all_elements()
         self.print(str(self))  # Happens before
 
@@ -224,7 +220,7 @@ class Controller:
         self._wait.until(lambda _: self._get_alert_elements())
         if not self._has_alert_elements:
             raise NoSuchElementException("Couldn't get customAlert elements.")
-        answer = f"{self._elements.alert_title.text}: {self._elements.alert_text.text}"  # TODO: Check if answer correct
+        answer = f"{self._elements.alert_title.text}: {self._elements.alert_text.text}"
         self._elements.alert_submit.click()
         if answer.startswith("You guessed the password!"):
             self._start_level()  # TODO: This prints level details before returning the answer for printing...
@@ -284,6 +280,7 @@ class Controller:
 
 
 def main(arguments: Optional[ParserArguments] = None):
+    """Main function; Instantiates & prints a :class:`Controller` instance with the given CLI arguments."""
     instance = Controller(arguments)
     print(instance)
 

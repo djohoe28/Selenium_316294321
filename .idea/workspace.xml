@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Simplified interface.py, and added closure">
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Standardized `interface.py` docs to end with periods.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/argument_parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/argument_parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/interface.py" beforeDir="false" afterPath="$PROJECT_DIR$/interface.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +40,7 @@
   }
 }</component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -52,6 +56,7 @@
     "Python.Args (format=json).executor": "Run",
     "Python.Args (output=out.json).executor": "Run",
     "Python.Main (CSV).executor": "Run",
+    "Python.Main (Help).executor": "Run",
     "Python.Main (JSON).executor": "Run",
     "Python.Main (TXT).executor": "Run",
     "Python.Main (main.json).executor": "Debug",
@@ -66,7 +71,7 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.Main (main.json)">
+  <component name="RunManager" selected="Python.Main (Help)">
     <configuration name="Args (format=json)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Selenium_316294321" />
       <option name="ENV_FILES" value="" />
@@ -266,15 +271,15 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.Main (TXT)" />
       <item itemvalue="Python.Main (Help)" />
       <item itemvalue="Python.Main (None)" />
-      <item itemvalue="Python.Main (JSON)" />
-      <item itemvalue="Python.Main (main.json)" />
-      <item itemvalue="Python.Main (CSV)" />
+      <item itemvalue="Python.Main (TXT)" />
       <item itemvalue="Python.Args (format=json)" />
       <item itemvalue="Python.Args (output=out.json)" />
+      <item itemvalue="Python.Main (CSV)" />
+      <item itemvalue="Python.Main (JSON)" />
       <item itemvalue="Python.Main (Safari)" />
+      <item itemvalue="Python.Main (main.json)" />
     </list>
     <recent_temporary>
       <list>
@@ -513,7 +518,39 @@
       <option name="project" value="LOCAL‎" />
       <updated>1723898760832</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL‎-00027" summary="Updated controller.py&#10;- refactored `get_driver` as `find_driver`&#10;- moved `find_driver` guard in Controller&#10;- added `_last_comment` for Controller&#10;- fixed `print(self)` in Controller (JSON)&#10;- more explicit exceptions in `submit_comment`">
+      <option name="closed" value="true" />
+      <created>1723898949664</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL‎-00027" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1723898949664</updated>
+    </task>
+    <task id="LOCAL‎-00028" summary="Removed `DriverType` in favor of `WebDriver`">
+      <option name="closed" value="true" />
+      <created>1724178651582</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL‎-00028" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1724178651582</updated>
+    </task>
+    <task id="LOCAL‎-00029" summary="Removed `DriverType` in favor of `WebDriver`">
+      <option name="closed" value="true" />
+      <created>1724178678425</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL‎-00029" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1724178678425</updated>
+    </task>
+    <task id="LOCAL‎-00030" summary="Standardized `interface.py` docs to end with periods.">
+      <option name="closed" value="true" />
+      <created>1724178710879</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL‎-00030" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1724178710879</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -528,9 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Test Commit." />
-    <MESSAGE value="argument_types.py" />
-    <MESSAGE value="argument_parser.py" />
     <MESSAGE value="selenium_driver.py" />
     <MESSAGE value="2024-08-12 11:00 - 16:30&#10;- argument_types.py&#10;- argument_parser.py&#10;- selenium_driver.py&#10;- main.py&#10;&#10;Signed-off-by: djohoe28 &lt;djohoe28@gmail.com&gt;" />
     <MESSAGE value="FIXED:&#10;- selenium_driver.py&#10;- - Refactored `args` to `browser`&#10;- - Now matches `browser.lower()`" />
@@ -553,14 +587,17 @@
     <MESSAGE value="Removed `args` from main.py" />
     <MESSAGE value="+ `--keep`, output group in argument_parser.py" />
     <MESSAGE value="Simplified interface.py, and added closure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Simplified interface.py, and added closure" />
+    <MESSAGE value="Updated controller.py&#10;- refactored `get_driver` as `find_driver`&#10;- moved `find_driver` guard in Controller&#10;- added `_last_comment` for Controller&#10;- fixed `print(self)` in Controller (JSON)&#10;- more explicit exceptions in `submit_comment`" />
+    <MESSAGE value="Removed `DriverType` in favor of `WebDriver`" />
+    <MESSAGE value="Standardized `interface.py` docs to end with periods." />
+    <option name="LAST_COMMIT_MESSAGE" value="Standardized `interface.py` docs to end with periods." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/controller.py</url>
-          <line>109</line>
+          <line>107</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
