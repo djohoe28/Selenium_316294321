@@ -1,4 +1,5 @@
 import argparse
+
 from argument_types import ParserArguments, Browsers, Formats
 
 
