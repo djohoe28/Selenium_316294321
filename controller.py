@@ -7,36 +7,37 @@ from selenium import webdriver
 from selenium.common import NoSuchDriverException, NoSuchElementException, ElementNotInteractableException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.remote.webdriver import WebDriver
 
-from argument_types import BrowserType, Browsers, DriverType, ParserArguments, Elements, Formats
+from argument_types import BrowserType, Browsers, ParserArguments, Elements, Formats
 
 
 class Controller:
-    """Class used to streamline interacting with the webpage via Selenium WebDriver"""
+    """Class used to streamline interacting with the webpage via the desired :class:`WebDriver` instance."""
     _arguments: ParserArguments
-    """Parser Arguments received upon initialization"""
+    """Parser Arguments received upon initialization."""
     _output_path: Optional[str]
-    """The output file path to print to (None = standard output)"""
+    """The output file path to print to (None = standard output)."""
     _output_encoding: str = "utf"  # Used instead of hard-coding 'utf' everywhere.
-    """Encoding for output file"""
-    _driver: DriverType
-    """The Selenium WebDriver used"""
+    """Encoding for output file."""
+    _driver: WebDriver
+    """The Selenium :class:`WebDriver` instance used."""
     _elements: Elements
-    """The relevant :class:`WebElement` instances used"""
+    """The relevant :class:`WebElement` instances used."""
     _wait: WebDriverWait
-    """Used to have the WebDriver wait for something to happen"""
+    """Used to have the :class:`WebDriver` wait for something to happen."""
     _is_interacted: bool
-    """Used to indicate whether an initial comment (message) has been sent to the chatbot"""
+    """Used to indicate whether an initial comment (message) has been sent to the chatbot."""
     _is_submitted: bool  # TODO: Unused?
-    """Used to indicate that a password guess has been submitted; Returns to False when customAlert is closed"""
+    """Used to indicate that a password guess has been submitted; Returns to False when customAlert is closed."""
     _last_comment: Optional[str]
 
     def __init__(self, arguments: ParserArguments):
         """
-        The :class:`Controller` Constructor
+        The :class:`Controller` Constructor.
 
-        :param ParserArguments arguments: Parser Arguments for initialization
-        :raises NoSuchDriverException: The `browser` field for the given :param:`arguments` was not recognized
+        :param ParserArguments arguments: Parser Arguments for initialization.
+        :raises NoSuchDriverException: The `browser` field for the given :param:`arguments` was not recognized.
         """
         self._arguments = arguments
         try:
@@ -59,7 +60,7 @@ class Controller:
             self._driver = self.create_driver(BrowserType[0])
         if not self._arguments.keep:
             self._driver.delete_all_cookies()
-        self._wait = WebDriverWait(self._driver, timeout=10, poll_frequency=.2,
+        self._wait = WebDriverWait(self._driver, timeout=10, poll_frequency=.2,  # TODO: timeout & poll_frequency CLI
                                    ignored_exceptions=[NoSuchElementException, ElementNotInteractableException])
         self._driver.get(self._arguments.url)
         self._elements = Elements()
@@ -68,7 +69,7 @@ class Controller:
 
     # def __del__(self):
     #     """
-    #     :class:`Controller` Destructor - automatically closes the Selenium WebDriver instance.
+    #     :class:`Controller` Destructor - automatically closes the :class:`WebDriver` instance.
     #     NOTE: Disabled because it apparently causes a race condition.
     #     """
     #     self._driver.close()
@@ -77,7 +78,7 @@ class Controller:
         return f"{self._elements.level_label.text}: {self._elements.description.text}"
 
     def close(self):
-        """Closes the underlying Selenium WebDriver"""
+        """Closes the underlying :class:`WebDriver` instance."""
         self._driver.close()
 
     def print(self, *values: object,
@@ -88,7 +89,7 @@ class Controller:
         Prints the values to a file-like object (stream), or to `sys.stdout` by default.
         Custom facade for :py:func:`print` to support `stdout` or [TXT, CSV, JSON] files.
 
-        :param *object values: Values to print
+        :param *object values: Values to print.
         :param Optional[str] sep: string inserted between values, default a space.
         :param Optional[str] end: string appended after the last value, default a newline.
         :param Literal[False] flush: whether to forcibly flush the stream.
@@ -120,15 +121,15 @@ class Controller:
                 with open(self._output_path, "a+", encoding=self._output_encoding) as file:
                     print(*values, sep=sep, end=end, file=file, flush=flush)
 
-    def create_driver(self, browser: BrowserType = Browsers[0]) -> DriverType:
+    def create_driver(self, browser: BrowserType = Browsers[0]) -> WebDriver:
         """
-        Creates a new Selenium WebDriver instance, type determined by the name of the browser.
+        Creates a new :class:`WebDriver` instance, type determined by the name of the browser.
 
-        :param BrowserType browser: The type of browser to use
-        :return: The requested :class:`WebDriver`
+        :param BrowserType browser: The type of browser to use.
+        :return: The requested :class:`WebDriver` instance.
         :rtype: DriverType
         """
-        driver: Optional[DriverType] = None
+        driver: Optional[WebDriver] = None
         match browser.lower():
             case "chrome":
                 driver = webdriver.Chrome()
@@ -156,7 +157,7 @@ class Controller:
         return driver
 
     def _start_level(self):
-        """Refresh the stored state of the webpage"""
+        """Refresh the stored state of the webpage."""
         self._is_interacted = False
         self._is_submitted = False
         self._get_all_elements()
@@ -178,13 +179,13 @@ class Controller:
 
     def submit_comment(self, value: str) -> str:
         """
-        Submit a comment for the chatbot
+        Submit a comment for the chatbot.
 
-        :param str value: The comment to submit
-        :return: The answer from the chatbot
+        :param str value: The comment to submit.
+        :return: The answer from the chatbot.
         :rtype: str
-        :raises ValueError: Prompt must be at least 10 characters long
-        :raises NoSuchElementException: Couldn't get answer / guess elements
+        :raises ValueError: Prompt must be at least 10 characters long.
+        :raises NoSuchElementException: Couldn't get answer / guess elements.
         """
         if len(value) < 10:
             raise ValueError(f"Prompt must be at least 10 characters long ({value})")
@@ -207,12 +208,12 @@ class Controller:
 
     def submit_guess(self, value: str) -> str:
         """
-        Submit a guess for the password
+        Submit a guess for the password.
 
-        :param str value: The guess for the password
-        :return: The alert message received
+        :param str value: The guess for the password.
+        :return: The alert message received.
         :rtype: str
-        :raises NoSuchElementException: Couldn't get guess / alert elements
+        :raises NoSuchElementException: Couldn't get guess / alert elements.
         """
         if not self._has_guess_elements:
             raise NoSuchElementException("You must submit a comment for the level before you can submit a guess!")
@@ -231,12 +232,12 @@ class Controller:
 
     @property
     def _has_default_elements(self) -> bool:
-        """Whether the default :class:`WebElement` instances are available"""
+        """Whether the default :class:`WebElement` instances are available."""
         return None not in [self._elements.level_label, self._elements.description,
                             self._elements.comment, self._elements.comment_submit]
 
     def _get_default_elements(self) -> bool:
-        """Updates the default :class:`WebElement` instances"""
+        """Updates the default :class:`WebElement` instances."""
         self._elements.level_label = self._driver.find_element(by=By.CLASS_NAME, value="level-label")
         self._elements.description = self._driver.find_element(by=By.CLASS_NAME, value="description")
         self._elements.comment = self._driver.find_element(by=By.ID, value="comment")
@@ -246,11 +247,11 @@ class Controller:
 
     @property
     def _has_answer_elements(self) -> bool:
-        """Whether the answer :class:`WebElement` instance is available"""
+        """Whether the answer :class:`WebElement` instance is available."""
         return None not in [self._elements.answer]
 
     def _get_answer_elements(self) -> bool:
-        """Update the answer :class:`WebElement` instance"""
+        """Update the answer :class:`WebElement` instance."""
         # TODO: Answer & Guess only appear after the first query has been sent...
         self._elements.answer = self._driver.find_element(by=By.CLASS_NAME,
                                                           value="answer") if self._is_interacted else None
@@ -258,11 +259,11 @@ class Controller:
 
     @property
     def _has_guess_elements(self) -> bool:
-        """Whether the guess :class:`WebElement` instances are available"""
+        """Whether the guess :class:`WebElement` instances are available."""
         return None not in [self._elements.guess, self._elements.guess_submit]
 
     def _get_guess_elements(self) -> bool:
-        """Update the guess :class:`WebElement` instances (if available, else set to None)"""
+        """Update the guess :class:`WebElement` instances (if available, else set to None)."""
         self._elements.guess = self._driver.find_element(by=By.ID, value="guess") if self._is_interacted else None
         self._elements.guess_submit = self._driver.find_element(by=By.CSS_SELECTOR,
                                                                 value="button[type='submit']:nth-child(2)"
@@ -271,11 +272,11 @@ class Controller:
 
     @property
     def _has_alert_elements(self) -> bool:
-        """Whether the modal alert :class:`WebElement` instances are available"""
+        """Whether the modal alert :class:`WebElement` instances are available."""
         return None not in [self._elements.alert_title, self._elements.alert_text, self._elements.alert_submit]
 
     def _get_alert_elements(self) -> bool:
-        """Update the modal alert :class:`WebElement` instances"""
+        """Update the modal alert :class:`WebElement` instances."""
         self._elements.alert_title, self._elements.alert_text = self._driver.find_elements(
             by=By.CSS_SELECTOR, value=".customAlert div:nth-child(2)")[:2]  # 1st & 2nd matches
         self._elements.alert_submit = self._driver.find_element(by=By.CSS_SELECTOR, value=".customAlert button")
