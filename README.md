@@ -11,6 +11,8 @@ Command Line Interface for Lakera AI's [Gandalf Challenge](https://gandalf.laker
 | School  |    Tel Hai Engineering    |
 |  Year   |  2023-2024, 2nd Semester  |
 
+Also available on: https://github.com/djohoe28/Selenium_316294321
+
 # Introduction
 
 This CLI is intended to streamline & allow automation for Lakera AI's Gandalf Challenge.
