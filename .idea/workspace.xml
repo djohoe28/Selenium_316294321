@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Added relative file links in README.md">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e9f43951-d016-4388-acdd-337c7ad5f8f5" name="Changes" comment="Updated README.md.">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -578,7 +577,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1724182631359</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL‎-00035" summary="Updated README.md.">
+      <option name="closed" value="true" />
+      <created>1726427395885</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL‎-00035" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1726427395885</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -593,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Set all Elements properties as Optional." />
     <MESSAGE value="Updated selenium_driver.py&#10;- Addressed &quot;NoSuchDriverException&quot;&#10;- Set all properties as private&#10;- Broke down `get_elements`&#10;- Refactored `submit` methods to return values" />
     <MESSAGE value="Added interface.py" />
     <MESSAGE value="Added WebDriverWait under selenium_driver.py&#10;Added alert elements in argument_types.py&#10;Added some documentation" />
@@ -618,7 +624,8 @@
     <MESSAGE value="Added `timeout` &amp; `poll_frequency` arguments" />
     <MESSAGE value="(linting) argument_parser.py" />
     <MESSAGE value="Added relative file links in README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added relative file links in README.md" />
+    <MESSAGE value="Updated README.md." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated README.md." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
